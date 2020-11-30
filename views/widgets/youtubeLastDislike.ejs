@@ -1,0 +1,22 @@
+<div class="card" style="width: 100%; min-height: 100%;">
+    <img class="card-img-top mx-auto" src="<%= youtubeLastDislike.img.url %>" alt="maxres">
+    <div class="card-body">
+        <h5 class="card-title">Dernière vidéo Youtube Dislikée</h5>
+        <p class="card-text"><%= youtubeLastDislike.i %> : <%= youtubeLastDislike.title %></p>
+        <p class="card-text">Chaine : <%=  youtubeLastDislike.author %></p>
+        <p class="card-text"><img src="/img/youtube/view.png" style="height: 1.5rem; width: 1.5rem;"> <%=  youtubeLastDislike.stats.viewCount %></p>
+        <p class="card-text"><img src="/img/youtube/like.png" style="height: 1.5rem; width: 1.5rem;"> <%=  youtubeLastDislike.stats.likeCount %></p>
+        <p class="card-text"><img src="/img/youtube/like.png" style="height: 1.5rem; width: 1.5rem; transform: rotate(180deg);"> <%=  youtubeLastDislike.stats.dislikeCount %></p>
+        <p class="card-text"><img src="/img/youtube/comment.png" style="height: 1.5rem; width: 1.5rem;"> <%=  youtubeLastDislike.stats.commentCount %></p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="/home/dislike/rem" class="btn btn-primary" style="width: 100%;">&#60;</a>
+        </div>
+        <div class="col-sm-6">
+            <a href="/home/dislike/add" class="btn btn-primary" style="width: 100%;">&#62;</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="card" style="width: 100%; min-height: 100%;">
+    <div class="card-body">
+        <h5 class="card-title">Convertisseur de devises</h5>
+        <!-- <p class="card-text">Hop</p> -->
+
+        <div class="input-group">
+            <input type="number" class="form-control" value="<%= exchangeMoney.amount %>" onchange="moneyChange(this.value)">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">EUR</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.USD %>" id="moneyChangeUSD">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">USD</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.CAD %>" id="moneyChangeCAD">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">CAD</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.AUD %>" id="moneyChangeAUD">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">AUD</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.CNY %>" id="moneyChangeCNY">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">CNY</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.JPY %>" id="moneyChangeJPY">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">JPY</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.RUB %>" id="moneyChangeRUB">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">RUB</span></div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" disabled value="<%= exchangeMoney.INR %>" id="moneyChangeINR">
+            <div class="input-group-append"><span class="input-group-text" style="width: 3.5rem">INR</span></div>
+        </div>
+        <p class="card-text">Taux de change du <%= exchangeMoney.date %></p>
+    </div>
+</div>
+
+<script>
+    var USD = "<%= exchangeMoney.USD %>";
+    var CAD = "<%= exchangeMoney.CAD %>";
+    var AUD = "<%= exchangeMoney.AUD %>";
+    var CNY = "<%= exchangeMoney.CNY %>";
+    var JPY = "<%= exchangeMoney.JPY %>";
+    var RUB = "<%= exchangeMoney.RUB %>";
+    var INR = "<%= exchangeMoney.INR %>";
+    var moneyChange = (value) => {
+        document.getElementById("moneyChangeUSD").value = Math.round(USD * value * 100) / 100;
+        document.getElementById("moneyChangeCAD").value = Math.round(CAD * value * 100) / 100;
+        document.getElementById("moneyChangeAUD").value = Math.round(AUD * value * 100) / 100;
+        document.getElementById("moneyChangeCNY").value = Math.round(CNY * value * 100) / 100;
+        document.getElementById("moneyChangeJPY").value = Math.round(JPY * value * 100) / 100;
+        document.getElementById("moneyChangeRUB").value = Math.round(RUB * value * 100) / 100;
+        document.getElementById("moneyChangeINR").value = Math.round(INR * value * 100) / 100;
+        // console.log(value);
+    }
+</script>

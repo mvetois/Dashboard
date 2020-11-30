@@ -1,0 +1,28 @@
+version: "3"
+services:
+    web:
+        build: .
+        depends_on:
+            - postgres
+        environment:
+            DATABASE_URL: postgres://dashboard:pass@postgres:5432/db
+            PORT: 8080
+        ports:
+            - "8080:8080"
+    postgres:
+        image: postgres:12
+        expose:
+            - "5432"
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_USER: dashboard
+            POSTGRES_PASSWORD: pass
+            POSTGRES_DB: db
+        volumes:
+            - "./data/init.sql:/docker-entrypoint-initdb.d/init.sql"
+            - "db-data:/var/lib/postgresql/data"
+        restart: always
+
+volumes:
+    db-data:

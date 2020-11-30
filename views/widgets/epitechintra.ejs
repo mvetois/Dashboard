@@ -1,0 +1,21 @@
+<div class="card" style="width: 100%; min-height: 100%;">
+    <div class="card-body">
+        <h5 class="card-title">Intra Epitech</h5>
+        <% if (epitechIntra === null) { %>
+            <p class="card-text">Vous n'êtes pas connecté</p>
+        <% } else { %>
+            <p class="card-text"><b><%=  epitechIntra.name %></b></p>
+            <p class="card-text"><%=  epitechIntra.mail %></p>
+            <p class="card-text">Semestre <%=  epitechIntra.semester %> - Promo <%= epitechIntra.first_group + " " + epitechIntra.promo %></p>
+            <p class="card-text">Crédits : <%=  epitechIntra.credits %> - GPA : <%=  epitechIntra.gpa %></p>
+            <p class="card-text">Temps de log : <%=  epitechIntra.log %> h</p>
+            <p class="card-text">Absences cette semaine : <%=  epitechIntra.absences %></p>
+            <a href="/home/epitechintra/disconnect" class="btn btn-primary" style="position: absolute; right: 0rem; bottom: 0rem;">Se déconnecter</a>
+        <% } %>
+        <a href="https://intra.epitech.eu/admin/autolog" class="btn btn-outline-primary" style="position: absolute; left: 0rem; bottom: 0rem;" target="_blank">Obtenir le lien d'autologin</a>
+    </div>
+</div>
+<form action="/home/epitechintra" method="POST">
+    <input type="text" class="form-control" id="selectEpitechToken" name="selectEpitechToken" placeholder="Lien d'Autologin">
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+</form>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Dashboard | Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .body-margin {
+            margin-top: 5%;
+        }
+        .btn-google {
+            color: #545454;
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 1px #ddd
+        }
+    </style>
+</head>
+<body class="body-margin">
+
+    <% if (error) {%>
+    <p style="color: red;" class="text-center"><%= error %></p>
+    <% } %>
+    <% if (success) {%>
+    <p style="color: green;" class="text-center"><%= success %></p>
+    <% } %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form action="/login" method="POST">
+                    <div class="form-group row">
+                      <label for="inputUserLogin" class="col-sm-3 col-form-label">Pseudo</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputUserLogin" name="inputUserLogin" placeholder="Pseudo">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPasswordLogin" class="col-sm-3 col-form-label">Mot de passe</label>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Mot de passe">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-9">
+                        <button type="submit" class="btn btn-primary">Connexion</button>
+                      </div>
+                    </div>
+                  </form>
+                  <p>Vous n'avez pas de compte ? <a href="/register">S'inscrire</a></p>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-4">
+            <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/login/google"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Connexion avec Google</a> 
+          </div>
+          <div class="col-sm-5"></div>
+        </div>
+    </div>
+
+</body>
+</html>

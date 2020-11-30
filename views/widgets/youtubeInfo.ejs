@@ -1,0 +1,19 @@
+<div class="card" style="width: 100%; min-height: 100%;">
+    <% if (youtubeInfo != "N/A") { %>
+    <img class="card-img-top mx-auto" src="<%= youtubeInfo.img.url %>" alt="pp">
+    <% } %>
+    <div class="card-body">
+        <h5 class="card-title">Chaine Youtube</h5>
+        <% if (youtubeInfo != "N/A") { %>
+        <p class="card-text"><%= youtubeInfo.title %></p>
+        <p class="card-text"><%=  youtubeInfo.description %></p>
+        <p class="card-text"><img src="/img/youtube/sub.png" style="height: 1.5rem; width: 1.5rem;"> <%=  youtubeInfo.stats.subscriberCount %></p>
+        <p class="card-text"><img src="/img/youtube/view.png" style="height: 1.5rem; width: 1.5rem;"> <%=  youtubeInfo.stats.viewCount %></p>
+        <p class="card-text"><img src="/img/youtube/video.png" style="height: 1.5rem; width: 1.5rem;"> <%=  youtubeInfo.stats.videoCount %></p>
+        <% } %>
+    </div>
+</div>
+<form action="/home/youtubeinfo" method="POST">
+    <input type="text" class="form-control" id="selectyoutubeinfo" name="selectyoutubeinfo" placeholder="Lien de la chaine Youtube">
+    <button type="submit" class="btn btn-primary">Valider</button>
+</form>

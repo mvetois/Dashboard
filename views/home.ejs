@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Dashboard | profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .body-margin {
+            margin-top: 5%;
+        }
+    </style>
+</head>
+<body class="body-margin">
+
+    <div class="container">
+        <button class="btn btn-primary" style="margin-left: auto;" onclick="logout()">Log out</button>
+        <div class="row" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h1>Bienvenue</h1>
+                <p><%= username %></p>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/meteo.ejs") -%></div>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/epitechintra.ejs") -%></div>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/moneyconvert.ejs") -%></div>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/moneyhistory.ejs") -%></div>
+            <% if (youtubeLastLike) { %>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/youtubeLastLike.ejs") -%></div>
+            <% }
+            if (youtubeLastDislike) { %>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/youtubeLastDislike.ejs") -%></div>
+            <% }
+            if (youtubeInfo) { %>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/youtubeInfo.ejs") -%></div>
+            <% } %>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/ChuckNorrisJoke.ejs") -%></div>
+            <div class="col-sm-4" style="margin-top: 5rem; margin-bottom: 5rem;"><%- include("./widgets/pokemon.ejs") -%></div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function logout() {
+        window.location.href = '/disconnect'
+    }
+</script>
+</html>

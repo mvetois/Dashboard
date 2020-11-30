@@ -1,0 +1,12 @@
+<div class="card" style="width: 100%; min-height: 100%;">
+    <div class="card-body">
+        <h5 class="card-title">Chuck Norris Jokes</h5>
+        <% for (var i = 0; i < cnJoke.length; i++) { %>
+        <p class="card-text"><%= cnJoke[i] %></p>
+        <% } %>
+    </div>
+</div>
+<form action="/home/cnjoke" method="POST">
+    <input type="text" class="form-control" id="selectQueryJoke" name="selectQueryJoke" placeholder="Mot clé (En anglais)">
+    <button type="submit" class="btn btn-primary">Rechercher</button>
+</form>

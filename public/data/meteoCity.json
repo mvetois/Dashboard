@@ -1,0 +1,23 @@
+{
+    "fr": [
+        { "city": "Angers" },
+        { "city": "Bordeaux" },
+        { "city": "Dijon" },
+        { "city": "Grenoble" },
+        { "city": "Lille" },
+        { "city": "Lyon" },
+        { "city": "Marseille" },
+        { "city": "Montpellier" },
+        { "city": "Nancy" },
+        { "city": "Nantes" },
+        { "city": "Nice" },
+        { "city": "Paris" },
+        { "city": "Reims" },
+        { "city": "Rennes" },
+        { "city": "Saint-Etienne" },
+        { "city": "Saint-Malo" },
+        { "city": "Strasbourg" },
+        { "city": "Toulon" },
+        { "city": "Toulouse" }
+    ]
+}

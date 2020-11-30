@@ -1,0 +1,18 @@
+<div class="card" style="width: 100%; min-height: 100%;">
+    <img class="card-img-top mx-auto" src="/img/meteo/<%= meteo.weather[0].icon %>.png" alt="meteo" style="height: 100px; width: 100px;">
+    <div class="card-body">
+        <h5 class="card-title"><%= meteo.name %></h5>
+        <p class="card-text">Température : <%=  Math.round(meteo.main.temp) %> °C</p>
+        <p class="card-text">Ressenti : <%=  Math.round(meteo.main.feels_like) %> °C</p>
+        <p class="card-text">Humidité : <%=  Math.round(meteo.main.humidity) %> %</p>
+        <p class="card-text">Vent : <%=  Math.round(meteo.wind.speed) %> m/s - <%= meteo.wind.deg%>°</p>
+    </div>
+</div>
+<form action="/home/meteo" method="POST">
+    <select class="form-control" id="selectMeteoCity" name="selectMeteoCity">
+        <% for (var i = 0; i < Object.keys(meteo_list.fr).length; i++) {%>
+            <option <% if (meteo_list.fr[i].city == meteo_selected) { %> selected <% } %> ><%= meteo_list.fr[i].city %></option>
+        <% } %>
+        </select>
+    <button type="submit" class="btn btn-primary">Changer de ville</button>
+</form>
