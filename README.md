@@ -36,7 +36,7 @@ The Epitech intranet service allows us to set up a widget to summarize the infor
 ### Chuck Noris
 Thanks to a keyword, you can see the jokes on chuck noris associated with it.
 
-### Chuck Noris
+### Pokemon
 With an ID, you can display some informations about the pokemon with this ID.
 
 ## About.json
